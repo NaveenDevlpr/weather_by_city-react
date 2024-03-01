@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 
-const SearchBox = () => {
+const SearchBox = ({setSearchParam}) => {
     const [recent,setRecent]=useState([])
     const [search,setSearch]=useState('')
 
     const searchFunc=()=>{
-        
+        setSearchParam((prevValue)=>(
+            {...prevValue,q:search}
+          ))
         if (recent.length === 5) {
            
             const updatedRecent = [...recent.slice(1), search];
