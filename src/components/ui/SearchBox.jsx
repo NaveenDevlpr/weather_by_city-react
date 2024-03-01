@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { IoClose } from "react-icons/io5";
 
-const SearchBox = ({setSearchParam}) => {
+const SearchBox = ({setSearchParam,setUnits}) => {
     const [recent,setRecent]=useState([])
     const [search,setSearch]=useState('')
+    const [celcius,setCelcius]=useState(true)
+    const [farenheit,setFarenheit]=useState(false)
 
     const searchFunc=()=>{
         setSearchParam((prevValue)=>(
@@ -45,6 +47,20 @@ const SearchBox = ({setSearchParam}) => {
          setRecent(JSON.parse(data))
         }
     }
+
+
+    const changeCelcius=()=>{
+        setUnits("metric")
+        setCelcius(true)
+        setFarenheit(false)
+    }
+
+    const changeFarenheit=()=>{
+        setUnits("imperila")
+        setCelcius(false)
+        setFarenheit(true)
+    }
+    
     useEffect(()=>{
       getRecents()
     },[])
@@ -63,7 +79,16 @@ const SearchBox = ({setSearchParam}) => {
             className='rounded-3xl px-5 py-3 text-white bg-[#BFA2DB]'>
                 Search
             </button>
-            
+           <div className='flex flex-row items-center border-2 border-black rounded-xl'>
+                <button className={`w-1/2 px-4 py-2 rounded-l-xl ${celcius?'bg-[#BFA2DB] text-white':'text-black'}`} onClick={()=>changeCelcius()}>
+                    C
+                </button>
+                <button className={`w-1/2 px-4 py-2 rounded-r-xl ${farenheit?'bg-[#BFA2DB] text-white':'text-black'}`} onClick={()=>{changeFarenheit()}}>
+                    F
+                </button>
+            <div/>
+        </div>
+
         </div>
         
         {

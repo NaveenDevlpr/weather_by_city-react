@@ -1,11 +1,11 @@
 import React from 'react'
 import SearchBox from './ui/SearchBox'
 import Loader from './ui/Loader'
-const Header = ({setSearchParam,weatherData}) => {
+const Header = ({setSearchParam,weatherData,setUnits}) => {
 
   return (
     <div className='flex flex-col w-full space-y-8'>
-        <SearchBox setSearchParam={setSearchParam}/>
+        <SearchBox setSearchParam={setSearchParam} setUnits={setUnits}/>
 
         {
             weatherData ? (
