@@ -61,6 +61,16 @@ const SearchBox = ({setSearchParam,setUnits}) => {
         setFarenheit(true)
     }
     
+
+    const revisit=(i)=>{
+        const data=localStorage.getItem('recents')
+        var r=JSON.parse(data)
+        var needed=r[i]
+        setSearch(needed)
+        setSearchParam((prevValue)=>(
+            {...prevValue,q:needed}
+          ))
+    }
     useEffect(()=>{
       getRecents()
     },[])
@@ -98,7 +108,9 @@ const SearchBox = ({setSearchParam,setUnits}) => {
                         {
                             recent.map((e,i)=>{
                                 return( 
-                                    <div key={i} className='flex flex-row items-center justify-center px-4 py-2 space-x-2 text-sm bg-gray-200 border-gray-200 rounded-3xl'>
+                                    <div 
+                                    onClick={()=>{revisit(i)}}
+                                    key={i} className='flex flex-row items-center justify-center px-4 py-2 space-x-2 text-sm bg-gray-200 border-gray-200 cursor-pointer rounded-3xl'>
                                         <h2>{e}</h2>
                                         <IoClose className='w-4 h-4 cursor-pointer' onClick={()=>{removeRecent(i)}}/>
                                     </div>
