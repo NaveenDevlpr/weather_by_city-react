@@ -21,19 +21,19 @@ const Content = ({data}) => {
               <h2 className='text-black text-[120px] font-light ml-12'>{Math.ceil(data.temp)}&deg;</h2>
             <div className='flex flex-row items-center justify-center space-x-2'>
                <div className='flex flex-col items-center justify-center'>
-                    <h2 className='text-sm text-gray-400'>Maximum</h2>
+                    <h2 className='text-gray-400 text-md'>Maximum</h2>
                     <h2 className='font-medium text-gray-500 text-md'>{Math.ceil(data.temp_max)}&deg;</h2>
                </div>
                 <h2 className='text-3xl'>|</h2>
                 <div className='flex flex-col items-center justify-center'>
-                    <h2 className='text-sm text-gray-400'>Minimum</h2>
+                    <h2 className='text-gray-400 text-md'>Minimum</h2>
                     <h2 className='font-medium text-gray-500 text-md'>{Math.floor(data.temp_min)}&deg;</h2>
                </div>
             </div>
         </div>
 
         <div className='flex-row items-center mt-12 space-y-2 md:flex md:justify-center md:flex-col'>
-            <div className='flex flex-row items-center justify-around md:space-x-12'>
+            <div className='flex flex-row items-center justify-around md:space-x-12 md:ml-1'>
                 <div className='flex flex-col items-center justify-center'>
                     <FaWind className='w-6 h-6'/>
                     <h2 className='text-gray-400/80'>Wind</h2>
@@ -49,7 +49,7 @@ const Content = ({data}) => {
               <h2 className='ml-2 text-xl font-medium text-gray-600'>{data.humidity} %</h2>
             </div>
 
-            <div className='flex flex-row items-center justify-around ml-4 space-x-8 md:ml-6 '>
+            <div className='flex flex-row items-center justify-around ml-4 space-x-8 md:ml-9'>
               <div className='flex flex-col items-center justify-center'>
               <MdOutlineVisibility className='w-6 h-6'/>
               <h2 className='text-gray-400/80'>Visibility</h2>

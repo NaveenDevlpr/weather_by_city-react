@@ -8,10 +8,13 @@ const SearchBox = ({setSearchParam,setUnits}) => {
     const [farenheit,setFarenheit]=useState(false)
 
     const searchFunc=()=>{
+        if(search)
+       {
         setSearchParam((prevValue)=>(
             {...prevValue,q:search}
           ))
-        if (recent.length === 5) {
+
+          if (recent.length === 5) {
            
             const updatedRecent = [...recent.slice(1), search];
             setRecent(updatedRecent);
@@ -22,6 +25,8 @@ const SearchBox = ({setSearchParam,setUnits}) => {
             localStorage.setItem('recents', JSON.stringify([...recent, search]));
             
         }
+       }
+       
         
     }
 
@@ -89,12 +94,12 @@ const SearchBox = ({setSearchParam,setUnits}) => {
             className='rounded-3xl px-5 py-3 text-white bg-[#BFA2DB]'>
                 Search
             </button>
-           <div className='flex flex-row items-center border-2 border-black rounded-xl'>
+           <div className='flex flex-row items-center ring-2 ring-gray-400/50 rounded-xl'>
                 <button className={`w-1/2 px-4 py-2 rounded-l-xl ${celcius?'bg-[#BFA2DB] text-white':'text-black'}`} onClick={()=>changeCelcius()}>
-                    C
+                    &deg;C
                 </button>
                 <button className={`w-1/2 px-4 py-2 rounded-r-xl ${farenheit?'bg-[#BFA2DB] text-white':'text-black'}`} onClick={()=>{changeFarenheit()}}>
-                    F
+                    &deg;F
                 </button>
             <div/>
         </div>
@@ -109,10 +114,10 @@ const SearchBox = ({setSearchParam,setUnits}) => {
                             recent.map((e,i)=>{
                                 return( 
                                     <div 
-                                    onClick={()=>{revisit(i)}}
+                                   
                                     key={i} className='flex flex-row items-center justify-center px-4 py-2 space-x-2 text-sm bg-gray-200 border-gray-200 cursor-pointer rounded-3xl'>
-                                        <h2>{e}</h2>
-                                        <IoClose className='w-4 h-4 cursor-pointer' onClick={()=>{removeRecent(i)}}/>
+                                        <h2  onClick={()=>{revisit(i)}}>{e}</h2>
+                                        <IoClose className='inline-block w-4 h-4 cursor-pointer' onClick={()=>{removeRecent(i)}}/>
                                     </div>
                                 )
                             })
