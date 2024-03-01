@@ -33,7 +33,7 @@ const Content = ({data}) => {
         </div>
 
         <div className='flex-row items-center mt-12 space-y-2 md:flex md:justify-center md:flex-col'>
-            <div className='flex flex-row items-center justify-around md:space-x-11'>
+            <div className='flex flex-row items-center justify-around md:space-x-12'>
                 <div className='flex flex-col items-center justify-center'>
                     <FaWind className='w-6 h-6'/>
                     <h2 className='text-gray-400/80'>Wind</h2>

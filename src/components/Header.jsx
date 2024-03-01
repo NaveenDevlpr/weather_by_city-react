@@ -13,7 +13,7 @@ const Header = ({setSearchParam,weatherData}) => {
             <h2 className='text-2xl font-medium md:text-3xl text-gray-400/60'>
                 Right now in
             </h2>
-            <h2 className='text-2xl font-bold text-[#B1B2FF] md:text-3xl'>
+            <h2 className='text-2xl font-bold text-[#BFA2DB] md:text-3xl'>
                 {
                     weatherData.name
                 }
