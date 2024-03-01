@@ -19,18 +19,18 @@ const SearchBox = ({setSearchParam}) => {
         
     }
   return (
-   <div className='w-full flex flex-col space-y-4'>
-        <div className='w-full flex flex-row space-x-2 items-center justify-center'>
+   <div className='flex flex-col w-full space-y-4'>
+        <div className='flex flex-row items-center justify-center w-full space-x-2'>
             <input 
             type='text'
             placeholder='Enter a city...'
             value={search}
             onChange={(e)=>{setSearch(e.target.value)}}
-            className='w-1/2 rounded-3xl border-2 border-gray-400/50 outline-none focus:border-gray-500 focus:outline-none focus:bg-white px-4 py-3'>
+            className='w-full px-4 py-3 bg-transparent border-2 outline-none md:w-1/2 rounded-3xl border-gray-400/50 focus:border-gray-500 focus:outline-none focus:bg-gray-100'>
             </input>
             <button 
             onClick={()=>{searchFunc()}}
-            className='rounded-3xl px-5 py-3 text-white bg-black'>
+            className='rounded-3xl px-5 py-3 text-white bg-[#B1B2FF]'>
                 Search
             </button>
             
@@ -38,12 +38,12 @@ const SearchBox = ({setSearchParam}) => {
         
         {
                 recent.length>0 && (
-                    <div className='flex flex-row space-x-5 items-center w-full px-2'>
-                        <h2 className='text-black text-md whitespace-nowrap font-medium'>Recently Searched :</h2>
+                    <div className='grid items-center w-full grid-cols-3 gap-2 px-2 space-x-5 md:flex-row md:flex'>
+                        <h2 className='font-medium text-black text-md whitespace-nowrap'>Recently Searched :</h2>
                         {
                             recent.map((e,i)=>{
                                 return( 
-                                    <div className='rounded-3xl border-gray-200 bg-gray-200 text-black text-sm px-4 py-2 text-center'>
+                                    <div className='px-4 py-2 text-sm text-center text-black bg-gray-200 border-gray-200 rounded-3xl'>
                                         {e}
                                     </div>
                                 )

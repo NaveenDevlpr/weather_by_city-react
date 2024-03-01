@@ -10,15 +10,15 @@ const Header = ({setSearchParam,weatherData}) => {
         {
             weatherData ? (
                 <div className='flex flex-row items-center justify-center space-x-4'>
-            <h2 className='text-3xl font-medium text-gray-400/60'>
+            <h2 className='text-2xl font-medium md:text-3xl text-gray-400/60'>
                 Right now in
             </h2>
-            <h2 className='text-3xl font-bold text-black'>
+            <h2 className='text-2xl font-bold text-[#B1B2FF] md:text-3xl'>
                 {
                     weatherData.name
                 }
             </h2>
-            <h2 className='text-3xl font-medium text-gray-400/60'>
+            <h2 className='text-2xl font-medium md:text-3xl text-gray-400/60'>
                 , its {weatherData.details}
             </h2>
         </div>

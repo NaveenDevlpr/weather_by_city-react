@@ -19,19 +19,18 @@ function App() {
   }
 
   useEffect(()=>{
-    //  getData()
+     //getData()
   },[searchParam,units])
 
 
 
   return (
    
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto max-w-7xl">
+    <div className="flex flex-col items-center justify-around min-h-screen px-4 py-8 mx-auto max-w-7xl">
         
         <Header setSearchParam={setSearchParam} weatherData={weatherData}/>
         <Content data={weatherData}/>
         <FooterContent data={weatherData}/>
-        
     </div>
     
   );
