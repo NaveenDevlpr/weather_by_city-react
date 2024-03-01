@@ -42,10 +42,10 @@ function App() {
    
     <div className="flex flex-col items-center justify-around min-h-screen px-4 py-8 mx-auto max-w-7xl">
         {
-          error && (<div  className="flex flex-row items-center justify-between w-full px-4 py-2 text-xl font-bold text-white bg-red-400 rounded-xl">
+          error && (<div  className="flex flex-row items-center justify-between w-full px-4 py-4 mb-2 text-xl font-bold text-white bg-red-400 md:mb-0 rounded-xl">
             <h2>  The location is incorrect. Search by a proper City name 
               </h2>
-              <IoClose className="cursor-pointer" onClick={()=>{setError(!error)}}/>
+              <IoClose className="w-6 h-6 cursor-pointer" onClick={()=>{setError(!error)}}/>
           </div>)
             
           
