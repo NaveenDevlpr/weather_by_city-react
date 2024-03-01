@@ -9,7 +9,7 @@ const getWeatherData=async(type,searchParam)=>{
 
     const data= await fetch(url).then((res)=>res.json()).then((data)=>data)
 
-    
+    console.log(data)
     if(data && data.coord){
         const {
             coord:{lon,lat},

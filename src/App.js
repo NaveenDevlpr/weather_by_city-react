@@ -3,6 +3,7 @@ import Header from "./components/Header";
 
 import getWeatherData from "./services";
 import Content from "./components/Content";
+import FooterContent from "./components/FooterContent";
 
 
 function App() {
@@ -13,24 +14,24 @@ function App() {
   
 
   const getData=async()=>{
-
-
    const data=await  getWeatherData("weather",{...searchParam,units})
-
    setWeatherData(data)
   }
 
   useEffect(()=>{
-  //getData()
+    //  getData()
   },[searchParam,units])
 
 
 
   return (
    
-    <div className="max-w-7xl mx-auto min-h-screen flex items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 mx-auto max-w-7xl">
+        
         <Header setSearchParam={setSearchParam} weatherData={weatherData}/>
         <Content data={weatherData}/>
+        <FooterContent data={weatherData}/>
+        
     </div>
     
   );
